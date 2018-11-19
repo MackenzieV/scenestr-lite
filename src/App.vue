@@ -9,7 +9,11 @@
           <v-list-tile-action class="iconList">
               <v-icon class="icons">{{ item.icon }}</v-icon>
           </v-list-tile-action>
-          <v-list-title-content class="itemTitle">{{ item.title }}</v-list-title-content>
+          <v-list-title-content class="itemTitle">
+            <v-btn to='/Myaccount' flat>
+              {{ item.title }}
+            </v-btn>
+          </v-list-title-content>
         </v-list-tile>
       </v-list>
       </v-navigation-drawer>
@@ -39,7 +43,7 @@
       return {
       sideNav: false,
       menuItems: [
-        { icon: 'account_circle', title: 'My Account'},
+        { icon: 'account_circle', title: 'My Account', link:'/Myaccount'},
         { icon: 'settings', title: 'Settings'},
         { icon: 'description', title: 'About'},
         { icon: 'help', title: 'FAQ'},
@@ -62,10 +66,10 @@
 }
 .iconList {
   padding:1em;
-  padding-top: 4em;
+  padding-top: 4.5em;
 }
 .icons {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 .itemTitle {
   padding:1em;
@@ -84,6 +88,9 @@
 }
 .avatarImg {
   margin-right: 1em;
+}
+a:link {
+  color: white;
 }
 
 </style>
