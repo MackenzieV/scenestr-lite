@@ -1,12 +1,12 @@
 <template>
-<div id="profile">
-  <p>the profile page</p>
+<div id="Logout">
+  <p>the my logout page</p>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'profile',
+  name: 'Logout',
   data () {
     return {
       msg: 'Scenestr'

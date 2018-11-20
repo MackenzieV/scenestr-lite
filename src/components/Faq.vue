@@ -1,12 +1,12 @@
 <template>
-<div id="createEvent">
-  <p>This is the create event page</p>
+<div id="Faq">
+  <p>the my faq page</p>
 </div>
 </template>
 
 <script>
 export default {
-  name: 'createEvent',
+  name: 'Faq',
   data () {
     return {
       msg: 'Scenestr'

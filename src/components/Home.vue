@@ -41,7 +41,7 @@ html, body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 3em;
-  width: 80%;
+  width: 85%;
 }
 
 </style>
