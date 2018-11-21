@@ -2,28 +2,46 @@
 <div id="createEvent">
   <div class="descText">Event Details:</div>
     <v-flex xs12 sm12 md12>
-      <v-text-field v-model="event.list" v-for="item in eventList" :key="item.list" label="Solo" :placeholder="item.list" solo></v-text-field>
+      <v-text-field v-model="newEvent.title"  label="Solo" placeholder="Event Title" solo></v-text-field>
     </v-flex>
-  <div class="descText">Description:</div>
-    <v-flex xs12>
-      <v-textarea solo name="input-7-4" label="Solo textarea" value=""></v-textarea>
-    </v-flex>
-    <div class="descText">Keywords:</div>
+
     <v-flex xs12 sm12 md12>
-      <v-text-field label="Solo" placeholder="e.g. Karaoke, Games, Beer, etc." solo></v-text-field>
+      <v-text-field v-model="newEvent.date"  label="Solo" placeholder="Date" solo></v-text-field>
     </v-flex>
+
+    <v-flex xs12 sm12 md12>
+      <v-text-field v-model="newEvent.location"  label="Solo" placeholder="Location" solo></v-text-field>
+    </v-flex>
+
+    <v-flex xs12 sm12 md12>
+      <v-text-field v-model="newEvent.cost"  label="Solo" placeholder="Cost" solo></v-text-field>
+    </v-flex>
+
+  <div class="descText">Description:</div>
+
+    <v-flex xs12>
+      <v-textarea v-model="newEvent.description" solo name="input-7-4" label="Solo textarea" value=""></v-textarea>
+    </v-flex>
+
+    <div class="descText">Keywords:</div>
+
+    <v-flex xs12 sm12 md12>
+      <v-text-field v-model="newEvent.keywords" label="Solo" placeholder="e.g. Karaoke, Games, Beer, etc." solo></v-text-field>
+    </v-flex>
+
     <v-btn @click="addEvent(newEvent)"class="btn1">Publish</v-btn>
     <v-btn class="btn2">Clear</v-btn>
 </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'createEvent',
   data () {
-    data: {
+    return {
       pageTitle:'Events',
-      userEvents [],
+      userEvents: [],
       newEvent: {
         userId: 0,
         title: '',
@@ -32,31 +50,21 @@ export default {
         cost: '',
         description: '',
         keywords: ''
-        }
-    },
-    return {
-      eventList: [
-        { list: 'Event ID' },
-        { list: 'Event Name' },
-        { list: 'Location' },
-        { list: 'Date/Time'},
-        { list: 'Cost' },
-      ]
-    }
-    methods:{
-    addEvent: function (event) {
-      axios.post('http://127.0.0.1:3000/add-event/', event)
-        .then(function (response) {
-          console.log(response.data[0]);
-        })
-        .catch(function (error) {
-          console.log(error);
-        })
       }
+  }
+},
+  methods: {
+  addEvent: function (event) {
+    axios.post('http://127.0.0.1:3000/add-event/', event)
+      .then(function (response) {
+        console.log(response.data[0]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
     }
   }
 }
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
