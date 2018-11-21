@@ -17,11 +17,11 @@
     <v-toolbar class="toolbar">
       <v-toolbar-side-icon @click="sideNav = !sideNav" class="hidden-md-and-up"></v-toolbar-side-icon>
       <v-toolbar-title>
-        <v-btn class="homeBtn" flat>
+        <a class="homeBtn" flat>
           <router-link to="/" tag="span" style="cursor:pointer">
             <v-icon class="homeIcon">home</v-icon>
           </router-link>
-        </v-btn>
+        </a>
       </v-toolbar-title>
       <!-- <v-toolbar-items >
         <v-btn flat v-for="item in menuItems" :key="item.title">
@@ -30,18 +30,14 @@
       </v-toolbar-items> -->
     </v-toolbar>
     <main>
-    <form>
       <router-view></router-view>
     </main>
   </v-app>
 </template>
 
 <script>
-
-// import CreateEvent from '../components/Event/CreateEvent'
   export default {
     name:'app',
-    // components: {CreateEvent},
     data () {
       return {
       sideNav: false,
@@ -51,14 +47,9 @@
         { icon: 'description', title: 'About', link:'/About'},
         { icon: 'help', title: 'FAQ', link: '/Faq'},
         { icon: 'message', title: 'My Messages', link:'/Mymessages'},
-        { icon: 'stars', title: 'Create Event', link:'/Event/CreateEvent'},
+        { icon: 'stars', title: 'Create Event', link:'/event/createevent'},
         { icon: 'pan_tool', title: 'Log Out', link:'/User/Logout'},
       ]
-      // methods: {
-      //   createEvent: function(event) {
-      //     console.log('test clicked')
-      //   }
-      // }
     }
   }
 }
@@ -71,6 +62,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  z-index: 1;
 }
 .iconList {
 
@@ -80,12 +72,13 @@
 }
 .homeBtn {
   position: absolute;
-  right: -.5em;
-  bottom: .7em;
+  right: .5em;
+  bottom: 0;
   margin: auto;
+  font-size: .8em;
 }
 .homeIcon {
-  font-size: 3em;
+  font-size: 2.8em;
 }
 .itemTitle {
   font-size: 1.2em;

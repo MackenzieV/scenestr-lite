@@ -21,7 +21,7 @@ export default new Router({
   routes: [
     { path: '/', Name: 'Home', component: Home},
     { path: '/events', Name: 'Events' , component: EventFeed},
-    { path: '/event/new', Name: 'CreateEvent' , component: CreateEvent },
+    { path: '/event/createevent', Name: 'CreateEvent' , component: CreateEvent },
     { path: '/signup', Name: 'Signup' , component: Signup },
     { path: '/signin', Name: 'Signin' , component: Signin},
     { path: '/about', Name: 'About' , component: About},
